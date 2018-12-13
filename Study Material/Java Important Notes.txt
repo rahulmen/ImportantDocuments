@@ -1,0 +1,9 @@
+Four reason why we declare constructor as private 
+======================================================
+singleton
+factory method
+static-methods-only (utility) class
+constants-only class
+
+
+

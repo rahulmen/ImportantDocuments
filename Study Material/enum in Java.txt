@@ -1,0 +1,25 @@
+Enumeration provide the purpose to declare group of named constraints in Programming Language.
+For example the 4 suits in a deck of playing cards may be 4 enumerators named Club, Diamond, 
+Heart, and Spade, belonging to an enumerated type named Suit. 
+
+enum Suit{
+
+Club,Diamond,Heart,Spade;
+
+}
+========================================
+
+enum Color 
+    { 
+        RED, GREEN, BLUE; 
+    }
+
+Internally above enum will be converted into 
+
+class Color{
+
+public static final Color RED = new Color();
+public static final Color GREEN = new Color();
+public static final Color BLUE = new Color();
+
+}

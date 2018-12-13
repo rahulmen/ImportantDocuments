@@ -1,0 +1,72 @@
+1. Script is invoked with log,context and testRunner cariables.
+
+2.
+log :- Is used to print and any value in console.
+Ex:- log.info "Hello this is my first Program"
+
+3.
+context :- context variable is used to access and modify properties of your testcases.
+	   Scope of context variable lies with in TestCase only where it is written.Syntax :-
+log.info context.expand("${#TestCase#CustomerProperty}")
+Print Customer Property defined by User at TestCase Level.
+
+4. testRunner is help us to access any CustomerProperty defined at Project Level as Scope of context lies within
+   that testCase only where it is defined.
+   Note :- To access any Custom property we have to come through its Parent.
+
+5.
+Syntax to fetch CustomProperty define in some different TestCase :-
+log.info testRunner.testCase.testSuite.testCases["<ParticularTestCAseName>"].getPropertyValue("KeyName")
+
+6.
+Syntax to fetch CustomProperty define in same TestCase :-
+log.ingo testRunner.testCase.getPropertyValue("KeyName")
+
+7.
+Syntax to fetch default CustomProperty in TestStep Level :-
+log.info testRunner.testCase.testSuite.testCases["<ParticularTestCaseName>"].testSteps["<ParticularTestStep>"].
+getPropertyValue("CustomPropertyName")
+
+8.
+Syntax to Set Customer Property defined at any Level.
+log.info testRunner.testCase.testSuite.testCases["<ParticularTestCaseName>"].setPropertyValue("CustomPropertyName","value")
+
+9.
+Syntax to fetch Customer Property defined at any Project Level :-
+def value = testRunner.testCase.testSuite.Project
+log.info value.getPropertyValue("<CustomPropertyName>")
+or
+value.setPropertyValue("<CustomPropertyName>","<DesiredValue>")
+
+10.
+We will Use XMLHolder Class to hold the Request/Response XMl and perform changes on it.
+Syntax :-
+
+def addReq = testRunner.testCase.testSuite.testCases["<TestCaseName>"].testSteps["<TestStepsName>"].getPropertyValue("Request")
+def XMLReq = new XMLHolder(addReq)
+XMLReq.setNodeValue("XPATH","Value")//We can get any stored value from testSuite,Project,testCase and place it here
+def newXMLReq = XMLReq.getXML()
+testRunner.testCase.testSuite.testCases["<TestCaseName>"].testSuites["<TestSuiteName>"].setPropertyValue("Request",newXMLReq)
+
+11. To run any TestStep we want to create Object of WsdlTestRunnerContext
+
+def variable = testRunner.testCase.testSuite.testCases["<TestCaseName>"].testSteps["<TestStepsName>"]
+def contextPower = new WsdlTestRunContext(variable)
+variable.run(testRunner,contextPower)
+
+12. To set Node Value.
+
+def detailRes = testRunner.testcase.testSuite.testCases["<TestCasesName>"].testSteps["testStepName"].getPropertyValue("Request") 
+def ResXml = new XmlHolder(detailRes)
+def value = ResXml.getNodeValue("//Xpath Expression")
+
+assert name GetResponse==name 
+
+
+
+
+
+
+
+
+

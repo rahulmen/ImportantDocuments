@@ -1,0 +1,29 @@
+1. We have 2 Ways to script in SOAP-UI tool.
+
+a.) Script Assertion(JSon and XML Response)
+b.) Groovy Scripting(XML Response automation)
+
+2. Use messageExchange to grap the response
+
+Syntax :-
+def response = messageExchange.response.responseContent
+
+3. We will use JsonSlurper class to hold Json Response and to grap a particular value.
+
+import groovy.json.JsonSlurper
+def response = messageExchange.response.responseContent
+def JsonHolder = new JsonSlurper().parseText(response)
+JsonHolder.<DefinePath>
+Example :- JsonHolder.parent.child.subchild.subsubchild
+
+Note :- Use log.info to print value any value grapped.
+
+4. How to grap Custom Property at TestCase Level usind context
+
+Syntax :-
+def actual = context.getTestCase().getPropertyValue("<Custom Property Name>")
+Store it in Variable and use assertion for comparing actual with expected
+assert actual == JsonHolder.parent.child.subchild.subsubchild
+
+5. 
+ 

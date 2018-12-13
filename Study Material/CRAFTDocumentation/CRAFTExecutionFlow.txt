@@ -1,0 +1,33 @@
+1. From testRunner we will call static method of Allocator class Allocator.main(parameters) and will pass all the parameters we got from DataProvider.
+2. main method will create allocator class object and using object reference will call non-static method driverBatchExecution() which is responsible for all execution.
+
+Important :- driverBatchExecution() method is non static because it is not common to particular class 
+
+==============================
+Important Method :-
+driverBatchExecution();
+===============================
+
+1. 	resultSummaryManager.setRelativePath();
+
+resultSummaryManager is an Object refernece which we have got from ResultSummaryManager Class using getInstance() Method that will return ResultSummaryManager Class Object 
+that we have created there.
+
+class ResultSummaryManager {
+
+private final static ResultSummaryManager resultSummaryManager = new ResultSummaryManager();
+
+public static ResultSummaryManager getInstance(){
+return resultSummaryManager;
+}
+
+}
+
+The return ResultManagerSummaryReference we will assign to local Object Reference.
+
+In Allocator Class
+
+ResultSummaryManager resultSummaryManager = ResultSummaryManager.getInsatance();
+
+=======================================
+2. 

@@ -1,0 +1,8 @@
+1. To check devices connected:-
+
+abd devices
+
+2. To install any Application
+
+adb install <Application Name>
+

@@ -1,0 +1,36 @@
+[] - This is treated at Arrays.
+{} - This is treated as Objects.
+
+Assertion Used in case of Json :-
+
+1. Json Path Match 
+This JSON matches the path with the actual result and in Json every thing is Object so we have to traverse using Object
+while working with Json.
+
+2. Json Path Count
+This Json counts the no of Object at the particular path.
+
+JsonAsertion where we have to find one Object Based on availaibity of another Object
+
+ParentObject.ChildObject[?(@.Object=='value')].Object
+
+Example1 :- find id  value where title matched 'Hot August Night'.
+
+photos.photo[?(@.title=='Hot August Night')].id
+
+Example 2 :- Find title value where owner is '24536826@N03'
+
+photos.photo[?(@.owner=='24536826@N03')].title
+
+3. JsonPath Existence Match
+
+This Assertion will help you to validate whether particular path is availaible or not
+
+Example:-
+photos.photo[12].id 
+true
+
+photos.photo[16].name
+false
+Reason :- because above path doesnt exist in Json xml
+

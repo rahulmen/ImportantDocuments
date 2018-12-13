@@ -1,0 +1,23 @@
+hoverctl start --upstream-proxy http://corp.proxy:8080
+
+hoverctl start --upstream-proxy http://webproxy.fpl.com:80
+
+git config --global http.proxy http://proxyUsername:proxyPassword@proxy.server.com:port
+
+git config --global http.proxy http://RXM05IL:Automa@2018@webproxy.fpl.com:80
+
+git config --global http.proxy http://<SILD>:<PAssword>@webproxy.fpl.com:80
+
+Command to Start jenikns:-
+
+java -jar jenkins .war --httpPort=9090
+
+mvn archetype:generate -DgroupId=com.learning.multithreading -DartifactId=ClassesPackage -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+ssh-keygen -t rsa -b 4096 -C rahulmendiratta13@gmail.com
+
+JENKINS_URL/job/CorporateSecurityApplication/build?token=TOKEN_NAME or /buildWithParameters?token=TOKEN
+
+
+git config --global http.proxy http://DXA00FT:sep@2018@webproxy.fpl.com:80
+

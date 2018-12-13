@@ -1,0 +1,28 @@
+1. Syntax for XPATH Assertion
+//ParentNode/ChildNode
+
+2. Syntax for Count Using Xpath :-
+count(//ParentNode/ChildNode)
+
+3. Syntax for checking if specific node is present or not
+exist(//ParentNode/ChildNode)
+
+4. Syntax for Data Transfer
+${#TestCase#CustomPropertyName}
+${#TestSuite#CustomPropertyName}
+${#Project#CustomPropertyName}
+Note :- TestCase,TestSuite and Project all are Generic Words so we will use # before them.
+
+5. Syntax Used in case of PropertyStep define along with TestStep
+{PropertyName#KeyName}
+
+6. Syntax used in case of PropertyTransfer Step
+Fetching value from :-
+//XpathExpresion/text()
+
+7. Alternative we can directly define the Custom Property from Test Step level
+${TestStepName#Request#XPathExpression/text()}
+
+Note :- Step 6 and 7 is used if we want to fetch any value from Request/Response of 1 TestStep and put into Request/Response of 2nd TestStep.
+
+  

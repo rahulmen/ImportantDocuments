@@ -1,0 +1,18 @@
+sdkmanager --list --verbose --no_https --proxy=http --proxy_host=<proxy_host> --proxy_port=<proxy_port>
+
+sdkmanager --list --verbose --no_https --proxy=http --proxy_host=proxy.cognizant.com --proxy_port=6050
+
+sdkmanager --list --verbose --no_https --proxy=http --proxy_host=webproxy.fpl.com --proxy_port=80
+
+sdkmanager "platform-tools" "platforms;android-26" --verbose --no_https --proxy=http --proxy_host=webproxy.fpl.com --proxy_port=80
+
+sdkmanager --verbose "system-images;android-19;google_apis;x86" --verbose --no_https --proxy=http --proxy_host=webproxy.fpl.com --proxy_port=80
+
+sdkmanager --verbose "system-images;android-24;armeabi-v7a" --verbose --no_https --proxy=http --proxy_host=webproxy.fpl.com --proxy_port=80
+
+mvn archetype:generate -DgroupId=com.cognizant.practice -DartifactId=com.self.training -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false -Dhttp.proxyHost= webproxy.fpl.com -Dhttp.proxyPort=80
+
+
+File srcNewFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		String currentDir = System.getProperty("user.dir");
+		FileUtils.copyFile(srcNewFile, new File(currentDir+"//screenshots//"+System.currentTimeMillis()+".png"));

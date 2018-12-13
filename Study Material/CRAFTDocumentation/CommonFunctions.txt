@@ -1,0 +1,2 @@
+1.public boolean isFramePresent(String frameId); Return bollean value after checking frame with id
+2.

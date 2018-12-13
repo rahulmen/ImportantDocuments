@@ -1,0 +1,55 @@
+1. to start hoverfly
+
+Command :- hoverctl start
+Open with Proxy :- 
+hoverctl start --upstream-proxy http://webproxy.fpl.com:80
+
+Oytput :-
+Hoverfly is now running
+
++------------+------+
+| admin-port | 8888 |
+| proxy-port | 8500 |
++------------+------+
+
+=======================================
+2. Set hoverfly to capture mode 
+
+C:\Users\RXM05IL\hoverfly_bundle_windows_amd64 (2)>hoverctl mode capture
+Hoverfly has been set to capture mode
+
+========================================================================
+3. Set Proxy-Port in SOUP UI tool.
+
+==========================================================================
+4. Export the Http Request and reponse Captured
+
+Command :- hoverctl export <File_name>
+
+hoverctl export File1.json
+============================================================================
+5. CHange the .son file as per the requirement.
+
+==========================================================================
+6. Switch to simulate mode
+
+hoverctl mode simulate --matching-strategy=first
+
+Output :- Hoverfly has been set to simulate mode with a matching strategy of 'first'
+
+=====================================================
+
+7. Import simulated .json file
+
+hoverctl import <File_name.json>
+
+=======================================================
+
+
+
+Hoverfly has five different modes. It can only run in one mode at any one time
+
+1. Capture Mode
+
+Used for creating API Simulation
+

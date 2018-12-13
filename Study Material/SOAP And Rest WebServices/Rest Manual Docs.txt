@@ -1,0 +1,26 @@
+1. REST :- Representation State Transfer
+2. Alternative of SOAP Protocol.
+3. RESTFUL Webservice can be considered at LightWeight alternative(Performance is higher that SOAP Webservice)
+4. REST is not a protocol it is an Architecture.
+5. We will use Standard HTTP methods to access the resources. They are GET,PUT,POST and DELETE.
+ 
+6. In Below URL
+
+https://www.google.co.in/search?q=soup+ui&oq=soup+ui&aqs=chrome..69i57.2342j0j7&sourceid=chrome&ie=UTF-8
+
+q=soup+ui is the resource Information which we are passing.
+
+Syntax :- BaseURL+Resource+Parameter
+
+1. Get :- to get desired information from the server.
+
+https://www.google.com/search?q=SOAP+UI&q=tools
+
+2. Post :- If we want to store some information into the Server.
+
+Point :- The Main difference b/w SOAP and REST is parameter will be visible in SOAP request send to server but in POST
+	 Parameter send by end user is not visible.
+
+https://maps.googleapis.com/maps/api/place/findplacefromtext/output?parameters
+
+

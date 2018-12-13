@@ -1,0 +1,66 @@
+1. to start hoverfly
+
+Command :- hoverctl start
+Open with Proxy :- 
+hoverctl start --upstream-proxy http://webproxy.fpl.com:80
+
+hoverctl start --upstream-proxy http://proxy.cognizant.com:6050
+
+Oytput :-
+Hoverfly is now running
+
++------------+------+
+| admin-port | 8888 |
+| proxy-port | 8500 |
++------------+------+
+
+=======================================
+2. Set hoverfly to capture mode 
+
+C:\Users\RXM05IL\hoverfly_bundle_windows_amd64 (2)>hoverctl mode capture
+Hoverfly has been set to capture mode
+
+========================================================================
+3. Set Proxy-Port in SOUP UI/Jmeter tool.
+
+==========================================================================
+4. Export the Http Request and reponse Captured
+
+Command :- hoverctl export <File_name>
+
+Example :-
+hoverctl export File1.json
+============================================================================
+5. CHange the .json file as per the requirement.
+
+==========================================================================
+6. Switch to simulate mode with matching strategy as first.
+
+hoverctl mode simulate --matching-strategy=first
+
+Output :- Hoverfly has been set to simulate mode with a matching strategy of 'first'
+
+=====================================================
+
+7. Import simulated .json file
+
+hoverctl import <File_name.json>
+
+Now evenThough if our service is not avaliable still we have .json file as a middleware wthich will return back us the captured response when our service was up.
+
+=======================================================
+
+curl -x http://proxy.cognizant.com:6050 --proxy-user rahul.mendiratta@cognizant.com:Automa@2019 -L http://time.jsontest.com/
+
+curl -x http://webproxy.fpl.com:80 --proxy-user rxm05il:Automa@2019 -L http://time.jsontest.com/
+
+curl -x http://webproxy.fpl.com:80 --proxy-user rxm05il:Automa@2019 -L http://time.jsontest.com/ --proxy localhost:8500
+
+curl -x http://webproxy.fpl.com:80 --proxy-user rxm05il:Automa@2019 -L --data "transactionid=1" httpbin.org/post --proxy localhost:8500
+
+
+
+
+
+
+
