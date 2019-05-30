@@ -1,4 +1,4 @@
-1. Script is invoked with log,context and testRunner cariables.
+1. Script is invoked with log,context and testRunner variables.
 
 2.
 log :- Is used to print and any value in console.
